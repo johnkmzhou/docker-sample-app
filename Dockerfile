@@ -7,7 +7,7 @@ WORKDIR /app
 
 # install and cache app dependencies
 COPY ["package.json", "package-lock.json", "cacert.pem", "./"]
-RUN npm config set cafile cacert.pem && npm install
+RUN npm config set cafile cacert.pem; npm install
 
 # start app
 CMD ["npm", "start"]
